@@ -2,9 +2,17 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Kotaku Scraper</title>
     <style>
-      body { background-color: #F2F6D0 }
+      .jumbotron{
+        background-color: coral;
+        opacity: .75;
+      }
+      body { background-image: url("gta.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
       #wrapper {
         width: 960px;
         margin-left: auto;
@@ -13,9 +21,11 @@
       }
       #articles {
         display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
+        /* overflow: auto; */
+        background-color: coral;
+        opacity: .9;
+        padding: 5px;
+        width: 650px;
       }
       #notes {
         float: right;
@@ -34,12 +44,31 @@
         height: 200px;
         font-size: 18px;
       }
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: white;
+}
+h2{
+  background: coral;
+  opacity: .9;
+}
     </style>
   </head>
   <body>
     <div id="wrapper">
-      <h1>Kotaku Scraper</h1>
-      <h2><i></i></h2>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Kotaku Digest</h1>
+          <hr>
+          <p class="lead"><h5>Click here to scrape. View Kotaku articles below. Feel free to leave a comment on any article or follow the link to the site.</h5></p>
+          <button class = "btn btn-danger" id = "scrape">Scrape!</button>
+        </div>
+      </div>
       <div id="articles"></div>
       <div id="notes"></div>
     </div>

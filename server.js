@@ -46,7 +46,6 @@ app.get("/scrape", function(req, res) {
     // Now, we grab every h2 within an article tag, and do the following:
     $(".content-wrapper").each(function(i, element) {
       // Save an empty result object
-      let count = 0;
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
@@ -55,12 +54,9 @@ app.get("/scrape", function(req, res) {
       .find("a")
       .attr("href");
 
-      if(count < 1){
       result.title = $(this)
-        .find("a")
+        .find("a")  
         .text();
-        count++
-      }
 
       result.summary = $(this)
          .find("p")
